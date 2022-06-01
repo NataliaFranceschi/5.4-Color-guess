@@ -1,6 +1,7 @@
 const circulos = document.getElementsByTagName('div');
 const corPricipal = document.getElementById('rgb-color');
 const resultado = document.getElementById('answer');
+const resetar = document.getElementById('reset-game');
 
 function corAleatoria() {
   const r = parseInt(Math.random() * 255, 10);
@@ -28,3 +29,9 @@ function corCentral() {
   const circuloAleatorio = circulos[Math.floor(Math.random() * 6)];
   corPricipal.innerText = getComputedStyle(circuloAleatorio).backgroundColor.split('rgb')[1]
 }
+
+function reiniciarJogo() {
+  location.reload();
+}
+
+resetar.addEventListener('click', reiniciarJogo);
